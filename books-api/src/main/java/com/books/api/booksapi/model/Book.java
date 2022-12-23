@@ -20,12 +20,14 @@ public class Book {
     @JsonProperty("title") private String title;
     @JsonProperty("author") private String author;
     @JsonProperty("genre") private Genre genre;
+    @JsonProperty("pages") private int pages;
 
     public Book (@JsonProperty("title") String title, @JsonProperty("author") String author, 
-        @JsonProperty("genre") Genre genre) {
+        @JsonProperty("genre") Genre genre, @JsonProperty("pages") int pages) {
             this.title = title;
             this.author = author;
             this.genre = genre;
+            this.pages = pages;
     }
 
     public String getTitle() {
@@ -40,6 +42,10 @@ public class Book {
         return genre;
     }
 
+    public int getPages() {
+        return pages;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -50,5 +56,9 @@ public class Book {
 
     public void setGenre(Genre genre) {
         this.genre = genre;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
     }
 }
